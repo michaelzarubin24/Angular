@@ -1,0 +1,13 @@
+<div>
+  <p>{{ task.description }}</p>
+  <p>Status: {{ task.status }}</p>
+  <p>Date: {{ task.date | date }}</p>
+  <button (click)="onEditTask()">Edit</button>
+
+  <div *ngIf="isEditing">
+    <input placeholder="Edit task description" [(ngModel)]="editedDescription" />
+    <button (click)="onEditConfirm()">Save</button>
+  </div>
+
+  <button (click)="onDeleteTask()">Delete</button>
+</div>

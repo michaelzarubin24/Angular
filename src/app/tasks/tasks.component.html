@@ -1,0 +1,14 @@
+<div *ngFor="let task of tasks">
+  <app-task
+    [task]="task"
+    [isEditing]="editingTask === task"
+    (deleteTask)="deleteTask($event)"
+    (editTask)="editTask($event)"
+    (startEditingTask)="startEditingTask($event)"
+  ></app-task>
+</div>
+
+<div>
+  <input placeholder="Enter task description" #newTaskDescription />
+  <button (click)="addTask(newTaskDescription.value)">Add Task</button>
+</div>
